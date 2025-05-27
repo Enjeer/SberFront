@@ -7,9 +7,13 @@ const ChatComponent = () => {
   const [containerHeight, setContainerHeight] = useState('100%');
   const [isLoading, setIsLoading] = useState(false);
 
+  const [showKeywordPopup, setShowKeywordPopup] = useState(false);
+  const [keywordInput, setKeywordInput] = useState('');
+  const [showHint, setShowHint] = useState(false);
+
   const headerRef = useRef(null);
 
-  const AI21_API_KEY = '1dd1f7fd-7fc0-4973-a7b2-b459943efe4b';
+  const AI21_API_KEY = process.env.AI21_API_KEY;
 
   const buildSystemMessage = () => ({
     role: 'system',
@@ -23,8 +27,8 @@ const ChatComponent = () => {
 Примеры:
 Пользователь: "Хочу оформить карту"
 Ты: "[SHOW_CARDS]"
-Пользователь: "Расскажи про Ultra Card"
-Ты: "Ultra Card 2.0 — премиальные привилегии, расширенная страховка."
+Пользователь: "Ultra Card (или любая из предложенных)"
+Ты: "[SHOW_KEY_WORD]"
 
 Если не знаешь ответа — аккуратно сообщи и предложи альтернативы.
 `
@@ -47,6 +51,9 @@ const ChatComponent = () => {
   }, []);
 
   const handleSend = async () => {
+    // Если сейчас открыт попап с вводом кодового слова — не отправляем основной input
+    if (showKeywordPopup) return;
+
     if (!input.trim()) return;
 
     const now = new Date();
@@ -69,8 +76,6 @@ const ChatComponent = () => {
         maxTokens: 200
       };
 
-      console.log('[handleSend] Request body:', requestBody);
-
       const response = await fetch("https://api.ai21.com/studio/v1/chat/completions", {
         method: "POST",
         headers: {
@@ -82,14 +87,11 @@ const ChatComponent = () => {
 
       if (!response.ok) {
         const errorText = await response.text();
-        console.error(`[handleSend] Ошибка запроса: ${response.status} - ${response.statusText}`, errorText);
         throw new Error(`Ошибка запроса: ${response.status} - ${response.statusText}`);
       }
 
       const data = await response.json();
       const text = data.choices?.[0]?.message?.content?.trim() || '';
-
-      console.log('[handleSend] Ответ AI21:', text);
 
       if (text === '[SHOW_CARDS]') {
         const cards = [
@@ -98,40 +100,53 @@ const ChatComponent = () => {
           { title: 'Ultra Card 2.0', subtitle: 'Премиальные привилегии, расширенная страховка' }
         ];
 
-        const buttons = cards.map(card => ({ text: card.title }));
-
         const botTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        const botMessage = {
+        setMessages(prev => [...prev, {
           text: 'Какую карту вы хотите оформить? Вот несколько популярных вариантов 👇🏻',
           fromUser: false,
           time: botTime,
           cards,
-          buttons,
-        };
-
-        setMessages(prev => [...prev, botMessage]);
+        }]);
+      } else if (text === '[SHOW_KEY_WORD]') {
+        // Показываем попап с вводом кодового слова
+        setShowKeywordPopup(true);
       } else {
-        // Обычный ответ модели с текстом
         const botTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        const botMessage = {
-          text,
-          fromUser: false,
-          time: botTime,
-        };
-        setMessages(prev => [...prev, botMessage]);
+        setMessages(prev => [...prev, { text, fromUser: false, time: botTime }]);
       }
     } catch (error) {
-      console.error('[handleSend] Ошибка:', error);
       const errorTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      const errorMessage = { text: 'Ошибка соединения с сервером', fromUser: false, time: errorTime };
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages(prev => [...prev, { text: 'Ошибка соединения с сервером', fromUser: false, time: errorTime }]);
     } finally {
       setIsLoading(false);
     }
   };
 
+  const handleConfirmKeyword = () => {
+    if (!keywordInput.trim()) return;
+
+    const now = new Date();
+    const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    // Добавляем в чат сообщение пользователя с кодовым словом из попапа
+    setMessages(prev => [...prev, { text: keywordInput.trim(), fromUser: true, time }]);
+
+    setShowKeywordPopup(false);
+    setShowHint(false);
+    setKeywordInput('');
+
+    // Можно автоматически отправить кодовое слово как новый запрос, если нужно:
+    // setInput(keywordInput.trim());
+    // handleSend();
+  };
+
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && !isLoading) handleSend();
+    if (e.key === 'Enter' && !isLoading) {
+      if (showKeywordPopup) {
+        handleConfirmKeyword();
+      } else {
+        handleSend();
+      }
+    }
   };
 
   const getCardImage = (title) => {
@@ -167,8 +182,6 @@ const ChatComponent = () => {
               <span className="message_time">{msg.time}</span>
             </div>
 
-            {/* Убрали рендер кнопок */}
-
             {msg.cards && msg.cards.length > 0 && (
               <div className="chat_cards">
                 {msg.cards.map((card, idx) => (
@@ -190,13 +203,50 @@ const ChatComponent = () => {
           </React.Fragment>
         ))}
 
-
         {isLoading && (
           <div className="chat_message bot">
             <span className="message_text">Печатает...</span>
           </div>
         )}
       </div>
+
+      {/* Попап с вводом кодового слова */}
+      {showKeywordPopup && (
+        <div className="keyword-popup-overlay">
+          <div className="keyword-popup">
+            <h3>Введите ваше кодовое слово</h3>
+            <input
+              type="text"
+              value={keywordInput}
+              onChange={e => setKeywordInput(e.target.value)}
+              placeholder="Кодовое слово"
+              autoFocus
+            />
+            <div className="keyword-hint">
+              <button
+                type="button"
+                className="hint-button"
+                onClick={() => setShowHint(!showHint)}
+              >
+                Показать подсказку
+              </button>
+              {showHint && (
+                <div className="hint-text">
+                  Имя первого питомца
+                </div>
+              )}
+            </div>
+            <button
+              type="button"
+              className="confirm-button"
+              onClick={handleConfirmKeyword}
+              disabled={!keywordInput.trim()}
+            >
+              Подтвердить
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="chat_input_area">
         <button className="chat_attach_btn">
@@ -208,13 +258,13 @@ const ChatComponent = () => {
           onChange={e => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Введите сообщение..."
-          disabled={isLoading}
+          disabled={isLoading || showKeywordPopup}
         />
         <button
           className="chat_voice_btn"
           title="Голосовой ввод"
           onClick={handleSend}
-          disabled={isLoading}
+          disabled={isLoading || showKeywordPopup}
         >
           <img src="../assets/voice-icon.png" alt="" />
         </button>
