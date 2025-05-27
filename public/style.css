@@ -1,0 +1,75 @@
+html{
+  font-family: -apple-system, sans-serif;
+  /* color: white; */
+}
+
+#root{
+    background-color: white;
+}
+
+@media screen and (min-width: 630px){
+
+html{
+    padding: 0;
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    position: relative;
+    width: 356px;
+    height: 750px;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+#root{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.mockup{
+    position: absolute;
+    background-image: url('./phone_035.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: 99999 !important;
+    pointer-events: none;
+}
+}
+@media screen and (max-width: 630px){
+    
+html{
+    padding: 0;
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+#root{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.mockup{
+    display: none;
+}
+}

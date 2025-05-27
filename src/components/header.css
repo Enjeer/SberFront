@@ -1,0 +1,11 @@
+div.bg_header_image{
+    position: relative;
+    background-image: url('../assets/iPhone\ 13.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 96%;
+    /* height: 30px; */
+    aspect-ratio: 1/0.14;
+    margin: 0 auto;
+    margin-top: 14px;
+}
