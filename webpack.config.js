@@ -33,7 +33,12 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     fallback: {
-      "process": require.resolve("process/browser"),
+      process: require.resolve('process/browser'),
+      buffer: require.resolve('buffer/'),
+      util: require.resolve('util/'),
+    },
+    alias: {
+      'process/browser': 'process/browser.js',
     },
   },
   devServer: {
@@ -55,6 +60,7 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       process: 'process/browser',
+      Buffer: ['buffer', 'Buffer'],
     }),
   ],
 };
