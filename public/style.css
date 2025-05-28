@@ -7,6 +7,40 @@ html{
     background-color: white;
 }
 
+@media screen and (max-width: 630px){
+    
+html{
+    padding: 0;
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+#root{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.mockup {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+    z-index: -1;
+  }
+}
+
 @media screen and (min-width: 630px){
 
 html{
@@ -42,34 +76,5 @@ body{
     height: 100%;
     z-index: 99999 !important;
     pointer-events: none;
-}
-}
-@media screen and (max-width: 630px){
-    
-html{
-    padding: 0;
-    height: 100svh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-body{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    background-color: black;
-}
-
-#root{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 50px;
-}
-
-.mockup{
-    display: none;
 }
 }
