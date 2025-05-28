@@ -4,7 +4,7 @@ import './chatComponent.css';
 // Импорт изображений
 import SberLisIcon from '../../public/assets/Sber_Lis_Icon.png';
 import clipIcon from '../../public/assets/clip-icon.png';
-import voiceIcon from '../../public/assets/voice-icon.png';
+import sendIcon from '../../public/assets/send-icon.png';
 import UltraCard from '../../public/assets/UltraCard_2_0.png';
 import BelcardPremium from '../../public/assets/BelcardPremium.png';
 import SberCard from '../../public/assets/SberCard.png';
@@ -645,7 +645,7 @@ const ChatComponent = () => {
           onClick={() => handleSend()}
           disabled={isLoading || showKeywordPopup}
         >
-          <img src={voiceIcon} alt="Voice input" />
+          <img src={sendIcon} alt="Voice input" />
         </button>
       </div>
     </div>
