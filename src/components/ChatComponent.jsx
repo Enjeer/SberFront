@@ -8,7 +8,6 @@ import voiceIcon from '../../public/assets/voice-icon.png';
 import UltraCard from '../../public/assets/UltraCard_2_0.png';
 import BelcardPremium from '../../public/assets/BelcardPremium.png';
 import SberCard from '../../public/assets/SberCard.png';
-import defaultCard from '../../public/assets/defaultCard.png';
 import eyeOpen from '../../public/assets/el_eye-open.png';
 import eyeClose from '../../public/assets/el_eye-close.png';
 
@@ -446,7 +445,7 @@ const ChatComponent = () => {
       case 'sbercard':
         return SberCard;
       default:
-        return defaultCard;
+        return;
     }
   };
 
