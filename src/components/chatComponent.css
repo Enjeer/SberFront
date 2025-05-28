@@ -222,7 +222,7 @@ nav button{
   font-size: .9rem;
   padding: 3px 7px;
   border: solid 2px var(--input-border);
-  height: 65px;
+  height: 40px;
   border-radius: 15px;
 }
 
