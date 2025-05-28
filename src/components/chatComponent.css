@@ -21,7 +21,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 1rem;
 }
 
 nav img{
@@ -86,7 +86,7 @@ nav button{
   margin-top: 2.3rem;
   border-radius: 10px;
   width: fit-content;
-  font-size: 2.5rem;
+  font-size: 1rem;
   min-width: 20%;
   max-width: 70%;
   position: relative;
