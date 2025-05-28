@@ -2,15 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import './chatComponent.css';
 
 // Импорт изображений
-import SberLisIcon from './assets/Sber_Lis_Icon.png';
-import clipIcon from './assets/clip-icon.png';
-import voiceIcon from './assets/voice-icon.png';
-import UltraCard from './assets/UltraCard_2_0.png';
-import BelcardPremium from './assets/BelcardPremium.png';
-import SberCard from './assets/SberCard.png';
-import defaultCard from './assets/defaultCard.png';
-import eyeOpen from './assets/el_eye-open.png';
-import eyeClose from './assets/el_eye-close.png';
+import SberLisIcon from '../../public/assets/Sber_Lis_Icon.png';
+import clipIcon from '../../public/assets/clip-icon.png';
+import voiceIcon from '../../public/assets/voice-icon.png';
+import UltraCard from '../../public/assets/UltraCard_2_0.png';
+import BelcardPremium from '../../public/assets/BelcardPremium.png';
+import SberCard from '../../public/assets/SberCard.png';
+import defaultCard from '../../public/assets/defaultCard.png';
+import eyeOpen from '../../public/assets/el_eye-open.png';
+import eyeClose from '../../public/assets/el_eye-close.png';
 
 const ChatComponent = () => {
   const [messages, setMessages] = useState([]);
