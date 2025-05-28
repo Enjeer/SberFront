@@ -142,10 +142,10 @@ nav button{
 }
 
 .chat_message.bot .bot_avatar{
-  width: 85px;
+  width: 30px;
   aspect-ratio: 1/1;
-  margin-bottom: -85px;
-  margin-left: -130px;
+  margin-bottom: -30px;
+  margin-left: -80px;
 }
 
 .chat_message.bot .bot_avatar img{
@@ -219,7 +219,7 @@ nav button{
 .chat_input_area input {
   flex-grow: 1;
   font-size: 1.1rem;
-  padding: 35px 20px;
+  padding: 0 10px;
   border: solid 2px var(--input-border);
   height: 100%;
   border-radius: 15px;
@@ -242,7 +242,7 @@ nav button{
 }
 
 .chat_input_area button img{
-    height: 40%;
+    height: 60%;
 }
 
 .keyword-popup-overlay {
