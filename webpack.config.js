@@ -1,6 +1,6 @@
-const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
-  mode: 'production', // или 'development' для dev
+  mode: 'development',
   module: {
     rules: [
       {
@@ -33,26 +33,28 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     fallback: {
-      process: require.resolve('process/browser'),
+      process: require.resolve('process/browser'), // вот это добавляем
     },
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-    }),
-    new webpack.ProvidePlugin({
-      process: 'process/browser',
-    }),
-  ],
   devServer: {
-    static: path.join(__dirname, 'public'),
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
     compress: true,
     port: 3000,
     hot: true,
     open: true,
     historyApiFallback: true,
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html', // путь к твоему html-шаблону
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser', // и вот это тоже добавляем
+    }),
+  ],
 };
