@@ -145,7 +145,7 @@ nav button{
   width: 30px;
   aspect-ratio: 1/1;
   margin-bottom: -30px;
-  margin-left: -80px;
+  margin-left: -50px;
 }
 
 .chat_message.bot .bot_avatar img{
