@@ -475,7 +475,7 @@ const ChatComponent = () => {
             </div>
 
             {/* Кнопки действий */}
-            {msg.buttons && (
+{/*             {msg.buttons && (
               <div className="message_buttons">
                 {msg.buttons.map((button, idx) => (
                   <button
@@ -487,7 +487,7 @@ const ChatComponent = () => {
                   </button>
                 ))}
               </div>
-            )}
+            )} */}
 
             {/* Карточки продуктов */}
             {msg.type === 'cards' && (
