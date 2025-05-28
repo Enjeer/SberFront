@@ -20,7 +20,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     font-weight: 600;
-    font-size: 2.3rem;
+    font-size: 3rem;
 }
 
 nav img{
@@ -41,6 +41,7 @@ nav button{
 
 .chat_component_container{
     height: 100% !important;
+    background-color: #FFFFFF;
     width: 100%;
     padding: 0 5% 8%;
     box-sizing: border-box;
@@ -84,7 +85,7 @@ nav button{
   margin-top: 2.3rem;
   border-radius: 10px;
   width: fit-content;
-  font-size: 2rem;
+  font-size: 2.5rem;
   min-width: 20%;
   max-width: 70%;
   position: relative;
@@ -100,7 +101,7 @@ nav button{
   bottom: 0.9rem;
   position: absolute;
   right: 0.9rem;
-  font-size: 1.75rem;
+  font-size: 2.2rem;
   font-weight: 500;
   opacity: var(--time-opacity);
   text-wrap: nowrap;
@@ -205,7 +206,7 @@ nav button{
 .chat_input_area {
   display: flex;
   width: 100%;
-  height: 4%;
+  height: 6%;
   background-color: #fff;
   align-self: flex-end !important;
   gap: 5px;
@@ -215,9 +216,9 @@ nav button{
 
 .chat_input_area input {
   flex-grow: 1;
-  font-size: 1.75rem;
-  padding: 0 15px;
-  border: solid 1px var(--input-border);
+  font-size: 2.75rem;
+  padding: 35px 20px;
+  border: solid 2px var(--input-border);
   height: 100%;
   border-radius: 15px;
 }
@@ -239,7 +240,7 @@ nav button{
 }
 
 .chat_input_area button img{
-    height: 60%;
+    height: 40%;
 }
 
 .keyword-popup-overlay {
