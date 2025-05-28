@@ -208,7 +208,7 @@ nav button{
 .chat_input_area {
   display: flex;
   width: 100%;
-  height: fit-content;
+  height: 8%;
   background-color: #fff;
   align-self: flex-end !important;
   gap: 5px;
