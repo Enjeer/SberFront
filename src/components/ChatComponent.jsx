@@ -15,7 +15,7 @@ const ChatComponent = () => {
   const headerRef = useRef(null);
   const messagesEndRef = useRef(null);
 
-  const AI21_API_KEY = process.env.REACT_APP_AI21_API_KEY;
+  const AI21_API_KEY = '1dd1f7fd-7fc0-4973-a7b2-b459943efe4b';
 
   // Автопрокрутка к последнему сообщению
   useEffect(() => {
