@@ -33,7 +33,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     fallback: {
-      process: require.resolve('process/browser'), // вот это добавляем
+      "process": require.resolve("process/browser"),
     },
   },
   devServer: {
@@ -48,13 +48,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html', // путь к твоему html-шаблону
+      template: './public/index.html',
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
     }),
     new webpack.ProvidePlugin({
-      process: 'process/browser', // и вот это тоже добавляем
+      process: 'process/browser',
     }),
   ],
 };
