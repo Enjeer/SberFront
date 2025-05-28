@@ -9,6 +9,7 @@
     --additional-text: #262626;
     --time-opacity: 0.5;
     --user-message-border-raduis: 15px 15px 0px 15px;
+    --bot-message-border-raduis: 0px 15px 15px 15px;
     --input-border: #B5BCC5;
 }
 
@@ -135,6 +136,7 @@ nav button{
 .chat_message.bot {
   background-color: var(--bot-message);
   align-self: flex-start;
+  border-radius: var(--bot-message-border-raduis);
   max-width: 60%;
   margin-left: 10%;
 }
