@@ -229,6 +229,7 @@ nav button{
   aspect-ratio: 1/1;
   height: 100%;
   border-radius: 55px;
+  background-color: white;
   color: white;
   border: none;
   cursor: pointer;
