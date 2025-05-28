@@ -1,6 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './chatComponent.css';
 
+// Импорт изображений
+import SberLisIcon from './assets/Sber_Lis_Icon.png';
+import clipIcon from './assets/clip-icon.png';
+import voiceIcon from './assets/voice-icon.png';
+import UltraCard from './assets/UltraCard_2_0.png';
+import BelcardPremium from './assets/BelcardPremium.png';
+import SberCard from './assets/SberCard.png';
+import defaultCard from './assets/defaultCard.png';
+import eyeOpen from './assets/el_eye-open.png';
+import eyeClose from './assets/el_eye-close.png';
+
 const ChatComponent = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
@@ -426,16 +437,16 @@ const ChatComponent = () => {
     switch (title.toLowerCase()) {
       case 'ultra card 2.0':
       case 'ultracard 2.0':
-        return '../assets/UltraCard 2_0.png';
+        return UltraCard;
       case 'белкарт премиум':
       case 'belkart премиум':
-        return '../assets/BelcardPremium.png';
+        return BelcardPremium;
       case 'сберкарта':
       case 'sberкарта':
       case 'sbercard':
-        return '../assets/SberCard.png';
+        return SberCard;
       default:
-        return '../assets/defaultCard.png';
+        return defaultCard;
     }
   };
 
@@ -455,7 +466,7 @@ const ChatComponent = () => {
             <div className={`chat_message ${msg.fromUser ? 'user' : 'bot'}`}>
               {isBot && (
                 <div className="bot_avatar">
-                  {showIcon ? <img src="../assets/Sber_Lis_Icon.png" alt="Bot" /> : <div style={{ width: 40 }} />}
+                  {showIcon ? <img src={SberLisIcon} alt="Bot" /> : <div style={{ width: 40 }} />}
                 </div>
               )}
               <div className="message_content">
@@ -566,7 +577,7 @@ const ChatComponent = () => {
   return (
     <div className="chat_component_container" style={{ height: containerHeight }}>
       <nav className="chat_nav" ref={headerRef}>
-        <img src="../assets/Sber_Lis_Icon.png" alt="logo" />
+        <img src={SberLisIcon} alt="logo" />
         <span>СберЛис</span>
         <button></button>
       </nav>
@@ -576,7 +587,7 @@ const ChatComponent = () => {
         {isLoading && (
           <div className="chat_message bot">
             <div className="bot_avatar">
-              <img src="../assets/Sber_Lis_Icon.png" alt="Bot" />
+              <img src={SberLisIcon} alt="Bot" />
             </div>
             <div className="message_content">
               <span className="message_text">Печатает...</span>
@@ -599,7 +610,7 @@ const ChatComponent = () => {
             />
             <div className="keyword-hint">
               <button type="button" className="hint-button" onClick={() => setShowHint(!showHint)}>Подсказка</button>
-              <img src={`../assets/el_eye-${showHint ? 'open' : 'close'}.png`} alt="Hint eye" />
+              <img src={showHint ? eyeOpen : eyeClose} alt="Hint eye" />
               {showHint && <div className="hint-text">Имя питомца</div>}
               <button type="button" className="hint-button" onClick={() => alert("Пожалуйста, обратитесь в отделение банка")}>
                 Не помню
@@ -619,7 +630,7 @@ const ChatComponent = () => {
 
       <div className="chat_input_area">
         <button className="chat_attach_btn">
-          <img src="../assets/clip-icon.png" alt="Attach" />
+          <img src={clipIcon} alt="Attach" />
         </button>
         <input
           type="text"
@@ -635,7 +646,7 @@ const ChatComponent = () => {
           onClick={() => handleSend()}
           disabled={isLoading || showKeywordPopup}
         >
-          <img src="../assets/voice-icon.png" alt="" />
+          <img src={voiceIcon} alt="Voice input" />
         </button>
       </div>
     </div>
