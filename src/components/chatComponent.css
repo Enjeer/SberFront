@@ -1,3 +1,7 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 :root{
     --bot-message: #ADF0C7;
     --user-message: linear-gradient(to bottom, #9BA1AB, #8A9099);
