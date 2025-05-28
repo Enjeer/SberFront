@@ -228,7 +228,7 @@ nav button{
 
 .chat_input_area button {
   aspect-ratio: 1/1;
-  height: 32px;
+  height: 40px;
   border-radius: 55px;
   background-color: white;
   color: white;
@@ -244,7 +244,7 @@ nav button{
 }
 
 .chat_input_area button img{
-    height: 60%;
+    width: 60%;
 }
 
 .keyword-popup-overlay {
