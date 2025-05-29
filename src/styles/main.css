@@ -132,17 +132,17 @@ body {
 }
 
 .products .view-all {
-  font-size: 1.6rem; /* уменьшено с 1.75rem */
+  font-size: .95rem; /* уменьшено с 1.75rem */
   color: purple;
   text-decoration: underline;
 }
 
 .products .cards-section {
   width: 90%;
-  margin: 0 auto;
+  margin: 25px auto 0;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 25px;
 }
 
 .products .cards-section .cards-header {
