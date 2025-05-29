@@ -64,6 +64,7 @@ body {
     margin-bottom: 4%;
     width: 100%;
     height: calc(100% - 117px);
+    background-color: #ffffff;
 }
 
 .shortcuts {
