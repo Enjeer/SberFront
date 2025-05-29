@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './chatComponent.css';
+import { useNavigate } from 'react-router-dom';
 
 // Импорт изображений
 import SberLisIcon from '../../public/assets/Sber_Lis_Icon.png';
@@ -447,6 +448,12 @@ const ChatComponent = () => {
       default:
         return;
     }
+  };
+
+  const navigate = useNavigate();
+
+  const handleSberlisClick = () => {
+    navigate('/MainPage');
   };
 
   // Рендеринг сообщений
