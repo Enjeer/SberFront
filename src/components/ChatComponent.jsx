@@ -75,7 +75,7 @@ const ChatComponent = () => {
       return 'SHOW_CARDS';
     }
     
-    if (/(ultra card 2\.0|сбер карта|белкарт премиум)/i.test(lowerText)) {
+    if (/(ultra card 2\.0|СберКарта|белкарт премиум)/i.test(lowerText)) {
       return 'SHOW_KEY_WORD';
     }
     
