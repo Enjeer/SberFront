@@ -585,7 +585,7 @@ const ChatComponent = () => {
       <nav className="chat_nav" ref={headerRef}>
         <img src={SberLisIcon} alt="logo" />
         <span>СберЛис</span>
-        <button></button>
+        <button onClick={handleSberlisClick}></button>
       </nav>
 
       <div className="chat_messages">
