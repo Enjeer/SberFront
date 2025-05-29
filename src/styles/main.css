@@ -8,6 +8,10 @@
     --input-border: #B5BCC5;
 }
 
+button{
+    background: none;
+}
+
 .main-container {
   border-radius: 8px;
   height: 100%;
