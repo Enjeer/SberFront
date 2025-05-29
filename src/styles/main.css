@@ -1,6 +1,205 @@
+:root{
+    --bot-message: #ADF0C7;
+    --user-message: linear-gradient(to bottom, #9BA1AB, #8A9099);
+    --main-button: #148F2B;
+    --additional-text: #262626;
+    --time-opacity: 0.5;
+    --user-message-border-raduis: 15px 15px 0px 15px;
+    --input-border: #B5BCC5;
+}
+
+
 .main-container {
   background-color: #f0f8ff;
   border-radius: 8px;
   height: 100%;
   position: relative;
+  padding: 0;
+}
+
+/* main.css */
+
+body {
+  margin: 0;
+  font-family: 'SF Pro Display', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 25px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
+  box-sizing: border-box;
+  background: white;
+}
+
+.logo {
+  width: 8%;
+  aspect-ratio: 1/1;
+}
+
+.header-icons button {
+  background: none;
+  border: none;
+  margin-left: 8px;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+
+.header-icons button img{
+    height: 100%;
+    width: 100%;
+}
+
+.shortcuts{
+  height: 15%;
+  display: flex;
+  position: relative;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+
+.shortcuts .track{
+  width: fit-content;
+  flex-wrap: nowrap;
+  display: flex;
+  gap: 40px;
+  padding: 3% 3% 3% 7%;
+}
+
+.shortcuts .track button{
+  position: relative;
+  height: 100%;
+  width: 35svw;
+  border: none;
+  background: white;
+  box-shadow: 0 7px 10px #2626262b;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+}
+
+.shortcuts .track button img{
+  height: 40%;
+}
+
+.shortcuts .track button span{
+  width: 80%;
+  margin-left: 0;
+  font-size: 2.3rem;
+  text-wrap: wrap;
+  text-align: left;
+}
+
+.products{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.products h2{
+  font-size: 4rem;
+  opacity: .8;
+}
+
+.products .view-all{
+  font-size: 3rem;
+  color: purple;
+  text-decoration: underline;
+}
+
+.products .cards-section{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.products .cards-section .cards-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.products .cards-section .cards-header span, button{
+  font-size: 4rem !important;
+}
+
+.products .cards-section .card{
+  display: flex;
+  align-items: center;
+    width: 100%;
+    cursor: pointer;
+    font-size: 3rem;
+    gap: 5%;
+}
+
+.products .cards-section .card.blocked{
+    width: 100%;
+    cursor: none;
+}
+
+.products .cards-section .card img{
+  width: 15%;
+  object-fit: contain;
+}
+
+
+.products .cards-section .card div{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.products .cards-section .cards-header button{
+  background-color: none;
+  border: none;
+  color: var(--main-button);
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  padding: 8px 0;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.main-nav button {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.75rem !important;
+  font-weight: 600;
+  color: #333;
+}
+
+.main-nav button.active{
+  filter: invert(28%) sepia(71%) saturate(4388%) hue-rotate(130deg) brightness(96%) contrast(84%);
+}
+
+.main-nav img {
+  height: 60%;
+  aspect-ratio: 1/1;
+  margin-bottom: 15px;
 }
