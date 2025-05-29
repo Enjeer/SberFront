@@ -27,6 +27,7 @@ body {
   flex-direction: column;
   height: 100vh;
   gap: 20px;
+  overflow-y: scroll;
 }
 
 .header {
