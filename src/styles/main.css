@@ -104,7 +104,7 @@ body {
 .shortcuts .track button span {
   width: 85%;
   margin-left: 0;
-  font-size: 1.8rem; /* уменьшено с 2rem */
+  font-size: 1.3rem; /* уменьшено с 2rem */
   text-wrap: wrap;
   text-align: left;
 }
