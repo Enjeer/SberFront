@@ -60,7 +60,7 @@ body {
 
 .shortcuts {
   height: 14%;
-    min-height: 240px
+    min-height: 240px;
   display: flex;
   position: relative;
   overflow-x: scroll;
