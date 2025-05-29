@@ -39,6 +39,7 @@ return(
       </div>
     </div>
 
+    <div className="content">
     {/* Shortcut Cards */}
     <div className="shortcuts">
       <div className="track">
@@ -60,7 +61,6 @@ return(
         </button>
       </div>
     </div>
-    <div className="content">
 
     {/* Products Section */}
     <div className="products">
