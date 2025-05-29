@@ -18,7 +18,7 @@ useEffect(() => {
     <Header />
     <div style={{ flexGrow: 1, overflow: 'hidden' }}>
       <Routes>
-        <Route path="*" element={<Chat />} />
+        <Route path="*" element={<MainPage />} />
         <Route path="/chat" element={<Chat />} />
       </Routes>
     </div>
