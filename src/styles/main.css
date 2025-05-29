@@ -26,38 +26,38 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  gap: 25px;
+  gap: 20px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5%;
+  padding: 4%;
   box-sizing: border-box;
   background: white;
 }
 
 .logo {
-  width: 8%;
+  width: 7%;
   aspect-ratio: 1/1;
 }
 
 .header-icons button {
   background: none;
   border: none;
-  margin-left: 8px;
+  margin-left: 6px;
   height: 100%;
   aspect-ratio: 1/1;
 }
 
 .header-icons button img {
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
 }
 
 .shortcuts {
-  height: 15%;
+  height: 14%;
   display: flex;
   position: relative;
   overflow-x: scroll;
@@ -70,17 +70,17 @@ body {
   width: fit-content;
   flex-wrap: nowrap;
   display: flex;
-  gap: 40px;
-  padding: 3% 3% 3% 7%;
+  gap: 30px;
+  padding: 2.5% 2.5% 2.5% 6%;
 }
 
 .shortcuts .track button {
   position: relative;
   height: 100%;
-  width: 35svw;
+  width: 33svw;
   border: none;
   background: white;
-  box-shadow: 0 7px 10px #2626262b;
+  box-shadow: 0 5px 8px #2626262b;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -88,51 +88,53 @@ body {
 }
 
 .shortcuts .track button img {
-  height: 40%;
+  height: 35%;
 }
 
 .shortcuts .track button span {
-  width: 80%;
+  width: 85%;
   margin-left: 0;
-  font-size: 2rem; /* уменьшено с 2.3rem */
+  font-size: 1.8rem; /* уменьшено с 2rem */
   text-wrap: wrap;
   text-align: left;
 }
 
 .products {
-  width: 90%;
+  width: 88%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
 .products h2 {
-  font-size: 2rem; /* уменьшено с 4rem */
+  font-size: 1.8rem; /* уменьшено с 2rem */
   opacity: .8;
+  margin-bottom: 10px;
 }
 
 .products .view-all {
-  font-size: 1.75rem; /* уменьшено с 3rem */
+  font-size: 1.6rem; /* уменьшено с 1.75rem */
   color: purple;
   text-decoration: underline;
 }
 
 .products .cards-section {
-  width: 90%;
+  width: 88%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 80px;
 }
 
 .products .cards-section .cards-header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .products .cards-section .cards-header span, 
 .products .cards-section .cards-header button {
-  font-size: 1.75rem !important; /* уменьшено с 4rem */
+  font-size: 1.6rem !important; /* уменьшено с 1.75rem */
 }
 
 .products .cards-section .card {
@@ -140,8 +142,8 @@ body {
   align-items: center;
   width: 100%;
   cursor: pointer;
-  font-size: 1.75rem; /* уменьшено с 3rem */
-  gap: 5%;
+  font-size: 1.6rem; /* уменьшено с 1.75rem */
+  gap: 4%;
 }
 
 .products .cards-section .card.blocked {
@@ -150,14 +152,14 @@ body {
 }
 
 .products .cards-section .card img {
-  width: 15%;
+  width: 14%;
   object-fit: contain;
 }
 
 .products .cards-section .card div {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .products .cards-section .cards-header button {
@@ -171,8 +173,8 @@ body {
   justify-content: space-around;
   align-items: center;
   background: white;
-  padding: 8px 0;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+  padding: 6px 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.04);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -185,7 +187,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.5rem !important; /* уменьшено с 1.75rem */
+  font-size: 1.4rem !important; /* уменьшено с 1.5rem */
   font-weight: 600;
   color: #333;
 }
@@ -195,7 +197,7 @@ body {
 }
 
 .main-nav img {
-  height: 60%;
+  height: 55%;
   aspect-ratio: 1/1;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
