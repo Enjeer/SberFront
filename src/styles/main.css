@@ -1,4 +1,4 @@
-:root{
+:root {
     --bot-message: #ADF0C7;
     --user-message: linear-gradient(to bottom, #9BA1AB, #8A9099);
     --main-button: #148F2B;
@@ -8,7 +8,6 @@
     --input-border: #B5BCC5;
 }
 
-
 .main-container {
   background-color: #f0f8ff;
   border-radius: 8px;
@@ -16,8 +15,6 @@
   position: relative;
   padding: 0;
 }
-
-/* main.css */
 
 body {
   margin: 0;
@@ -54,12 +51,12 @@ body {
   aspect-ratio: 1/1;
 }
 
-.header-icons button img{
+.header-icons button img {
     height: 100%;
     width: 100%;
 }
 
-.shortcuts{
+.shortcuts {
   height: 15%;
   display: flex;
   position: relative;
@@ -69,7 +66,7 @@ body {
   -ms-overflow-style: none;
 }
 
-.shortcuts .track{
+.shortcuts .track {
   width: fit-content;
   flex-wrap: nowrap;
   display: flex;
@@ -77,51 +74,50 @@ body {
   padding: 3% 3% 3% 7%;
 }
 
-.shortcuts .track button{
+.shortcuts .track button {
   position: relative;
   height: 100%;
   width: 35svw;
   border: none;
   background: white;
   box-shadow: 0 7px 10px #2626262b;
-
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: space-around;
 }
 
-.shortcuts .track button img{
+.shortcuts .track button img {
   height: 40%;
 }
 
-.shortcuts .track button span{
+.shortcuts .track button span {
   width: 80%;
   margin-left: 0;
-  font-size: 2.3rem;
+  font-size: 2rem; /* уменьшено с 2.3rem */
   text-wrap: wrap;
   text-align: left;
 }
 
-.products{
+.products {
   width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
-.products h2{
-  font-size: 4rem;
+.products h2 {
+  font-size: 2rem; /* уменьшено с 4rem */
   opacity: .8;
 }
 
-.products .view-all{
-  font-size: 3rem;
+.products .view-all {
+  font-size: 1.75rem; /* уменьшено с 3rem */
   color: purple;
   text-decoration: underline;
 }
 
-.products .cards-section{
+.products .cards-section {
   width: 90%;
   margin: 0 auto;
   display: flex;
@@ -129,42 +125,42 @@ body {
   gap: 100px;
 }
 
-.products .cards-section .cards-header{
+.products .cards-section .cards-header {
   display: flex;
   justify-content: space-between;
 }
 
-.products .cards-section .cards-header span, button{
-  font-size: 4rem !important;
+.products .cards-section .cards-header span, 
+.products .cards-section .cards-header button {
+  font-size: 1.75rem !important; /* уменьшено с 4rem */
 }
 
-.products .cards-section .card{
+.products .cards-section .card {
   display: flex;
   align-items: center;
-    width: 100%;
-    cursor: pointer;
-    font-size: 3rem;
-    gap: 5%;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.75rem; /* уменьшено с 3rem */
+  gap: 5%;
 }
 
-.products .cards-section .card.blocked{
-    width: 100%;
-    cursor: none;
+.products .cards-section .card.blocked {
+  width: 100%;
+  cursor: none;
 }
 
-.products .cards-section .card img{
+.products .cards-section .card img {
   width: 15%;
   object-fit: contain;
 }
 
-
-.products .cards-section .card div{
+.products .cards-section .card div {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.products .cards-section .cards-header button{
+.products .cards-section .cards-header button {
   background-color: none;
   border: none;
   color: var(--main-button);
@@ -189,12 +185,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.75rem !important;
+  font-size: 1.5rem !important; /* уменьшено с 1.75rem */
   font-weight: 600;
   color: #333;
 }
 
-.main-nav button.active{
+.main-nav button.active {
   filter: invert(28%) sepia(71%) saturate(4388%) hue-rotate(130deg) brightness(96%) contrast(84%);
 }
 
