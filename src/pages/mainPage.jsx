@@ -60,6 +60,7 @@ return(
         </button>
       </div>
     </div>
+    <div className="content">
 
     {/* Products Section */}
     <div className="products">
@@ -86,6 +87,7 @@ return(
         </div>
         <div className="view-all">Все карты</div>
       </div>
+    </div>
     </div>
 
     {/* Bottom Navigation */}
