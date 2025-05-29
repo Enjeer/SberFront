@@ -55,11 +55,12 @@ body {
 
 .header-icons button img {
     height: 90%;
-    width: 90%;
+    aspect-ratio: 1/1;
 }
 
 .shortcuts {
   height: 14%;
+    min-height: 240px
   display: flex;
   position: relative;
   overflow-x: scroll;
