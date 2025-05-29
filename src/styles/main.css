@@ -28,6 +28,7 @@ body {
   height: 100vh;
   gap: 20px;
   overflow-y: scroll;
+    margin-bottom: 4%;
 }
 
 .header {
@@ -60,7 +61,7 @@ body {
 
 .shortcuts {
   height: 14%;
-    min-height: 240px;
+    min-height: 190px;
   display: flex;
   position: relative;
   overflow-x: scroll;
@@ -91,7 +92,7 @@ body {
 }
 
 .shortcuts .track button img {
-  height: 35%;
+  height: 25%;
 }
 
 .shortcuts .track button span {
@@ -176,6 +177,7 @@ body {
   justify-content: space-around;
   align-items: center;
   background: white;
+  height: 4%;
   padding: 6px 0;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.04);
   position: fixed;
