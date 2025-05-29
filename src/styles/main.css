@@ -35,6 +35,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 4%;
+  height: 5%;
   box-sizing: border-box;
   background: white;
 }
