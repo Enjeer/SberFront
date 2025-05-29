@@ -88,7 +88,7 @@ const ChatComponent = () => {
       return 'SHOW_PARTNERS';
     }
     
-    if (/(перевести|отправить деньги|сделать перевод)/i.test(lowerText)) {
+    if (/(перевести|переведи|отправь|отправить деньги|сделать перевод)/i.test(lowerText)) {
       return 'SHOW_TRANSACTIONS';
     }
     
@@ -314,7 +314,7 @@ const ChatComponent = () => {
             
           case 'EXCHANGE':
             setMessages(prev => [...prev, {
-              text: 'Курс доллара сегодня 2.55 BYN. Хотите обменять валюту?',
+              text: 'Курс доллара сегодня 2.99 BYN. Хотите обменять валюту?',
               fromUser: false,
               time: botTime
             }]);
