@@ -36,6 +36,7 @@ body {
   align-items: center;
   flex-wrap: nowrap;
   height: 42px;
+  padding: 0px 10px;
   box-sizing: border-box;
   background: white;
 }
@@ -92,7 +93,7 @@ body {
   background: white;
   color: black !important;
   box-shadow: 0 5px 8px #2626262b;
-  border-raduis: 25px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: start;
