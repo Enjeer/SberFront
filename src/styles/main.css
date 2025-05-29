@@ -91,6 +91,7 @@ body {
   background: white;
   color: black !important;
   box-shadow: 0 5px 8px #2626262b;
+  border-raduis: 10px;
   display: flex;
   flex-direction: column;
   align-items: start;
