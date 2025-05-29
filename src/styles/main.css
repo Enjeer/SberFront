@@ -35,7 +35,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4%;
+  flex-wrap: nowrap;
   height: 5%;
   box-sizing: border-box;
   background: white;
@@ -62,6 +62,7 @@ body {
 .shortcuts {
   height: 14%;
     min-height: 190px;
+    color: black;
   display: flex;
   position: relative;
   overflow-x: scroll;
