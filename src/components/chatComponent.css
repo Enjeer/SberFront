@@ -9,7 +9,7 @@
     --additional-text: #262626;
     --time-opacity: 0.5;
     --user-message-border-raduis: 15px 15px 0px 15px;
-    --bot-message-border-raduis: 0px 15px 15px 15px;
+    --bot-message-border-raduis: 15px 0px 15px 15px;
     --input-border: #B5BCC5;
 }
 
